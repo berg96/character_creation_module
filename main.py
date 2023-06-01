@@ -4,6 +4,7 @@ from graphic_arts.start_game_banner import run_screensaver
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """Calc damage and displays message."""
     if char_class == 'warrior':
         return (f'{char_name} нанёс урон противнику равный'
                 f' {5 + randint(3, 5)}')
@@ -17,6 +18,7 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Calc blocked damage and displays message."""
     if char_class == 'warrior':
         return f'{char_name} блокировал {10 + randint(5, 10)} урона'
     if char_class == 'mage':
@@ -27,6 +29,7 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Calc special skill and displays message."""
     if char_class == 'warrior':
         return (f'{char_name} применил специальное умение'
                 f' «Выносливость {80 + 25}»')
@@ -38,6 +41,10 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Display message about the character's class.
+    Exercises attack, defense and special skills
+    until the user writes skip.
+    """
     if char_class == 'warrior':
         print(f'{char_name}, ты Воитель — отличный боец ближнего боя.')
     if char_class == 'mage':
@@ -62,6 +69,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Character Class Selection."""
     approve_choice: str = ''
     char_class: str = ''
     while approve_choice != 'y':
